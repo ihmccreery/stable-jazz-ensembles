@@ -16,23 +16,47 @@
 	\tableofcontents
 \end{frame}
 
-% BEGIN Ike
+% Ike
 
 \section{3GSM \& 3PSA}
 
 \begin{frame}
+	\frametitle{2GSM: 2-gender stable marriage problem}
+
+	$n$ men, $n$ women, each ranks $n$ of the opposite gender.
+	Stability is reached when
+	\[
+	\not\exists \: m \in M, w \in W \mid w >_m \mu(m) \text{ and } m >_w \mu(w).
+	\]
+	Guaranteed solution;
+	Gale-Shapley algorithm is efficient, $O(n^2)$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{2PSA: 2-person stable assignment problem}
+
+	$2n$ people, each ranks $2n-1$ others.
+	Stability is reached if
+	\[
+	\not\exists \: p, q \in P \mid q >_p \mu(p) \text{ and } p >_q \mu(q).
+	\]
+	No guaranteed solution;
+	% TODO CITE
+	Irving algorithm is efficient, $O(n^2)$
+\end{frame}
+
+\begin{frame}
 	\frametitle{3GSM: 3-gender stable marriage problem}
 
-	$n$ alto sax players, $n$ bassists, $n$ drummers, each ranks some of the $n(n-1)$ possible pairs to make an
-	ensemble of one alto player, one bassist, and one drummer.
-	May rank some and keep the rest as unacceptable.
+	$n$ alto sax players, $n$ bassists, $n$ drummers, each ranks $n(n-1)$ possible pairs to make an ensemble of one
+	alto player, one bassist, and one drummer.
 	Stability is reached when
 	\[
 	\not\exists \: a \in A, b \in B, d \in D
 	\]
 	such that
 	\[
-	(b,d) >_a \mu(a) \text{ and } (a,d) >_b \mu(b) \text{ and } (a,b) >_d \mu(d).
+	(b,d) >_a \mu(a) \text{ and } (a,d) >_b \mu(b) \text{ and } (a,b) >_d \mu(d)
 	\]
 	Can we guarantee a solution, and can we find an algorithm to compute a stable marriage?
 \end{frame}
@@ -40,17 +64,15 @@
 \begin{frame}
 	\frametitle{3PSA: 3-person stable assignment problem}
 
-	$3n$ people, each ranks some of the $\frac{1}{2}(3n-1)(3n-2)$ possible pairs of other students.
-	May rank some and keep the rest as unacceptable.
+	$3n$ people, each ranks $\frac{1}{2}(3n-1)(3n-2)$ possible pairs of other students.
 	Stability is reached if
 	\[
 	\not\exists \: p, q, r \in P
 	\]
 	such that
 	\[
-	(q,r) >_p \mu(p) \text{ and } (p,r) >_q \mu(q) \text{ and } (p,q) >_r \mu(r).
+	(q,r) >_p \mu(p) \text{ and } (p,r) >_q \mu(q) \text{ and } (p,q) >_r \mu(r)
 	\]
-
 	We probably can't guarantee a solution, but can we find an algorithm to decide?
 \end{frame}
 
@@ -70,9 +92,7 @@
 	\includegraphics[width=\textwidth]{mwsb-jazz}
 \end{frame}
 
-% END Ike
-
-% BEGIN Peter
+% Peter
 
 \begin{frame}
   \frametitle{Existence of Stable Matchings}
@@ -109,7 +129,7 @@
   \end{itemize}
 \end{frame}
 
-\section{\NP-Completeness}
+\section{\NP-hardness}
 
 \begin{frame}
   \frametitle{NP-Completeness}
@@ -138,11 +158,9 @@
   \end{itemize}
 \end{frame}
 
-% END Peter
+% Ike
 
-% BEGIN Ike
-
-\section{3GSM is \NP-Complete}
+\section{3GSM is \NP-hard}
 
 \subsection{Setup}
 
@@ -153,8 +171,7 @@
 	matching $M' \subseteq T'$?
 
 	% TODO CITE
-	Simplifying assumption: no element of $A'$, $B'$, or $D'$ appears in more than three triples of $T'$; still
-	\NP-Complete.
+	Simplifying assumption: no element of $A'$, $B'$, or $D'$ appears in more than three triples of $T'$; still \NP-hard.
 \end{frame}
 
 \begin{frame}
@@ -210,11 +227,48 @@
 	\qed
 \end{frame}
 
-% END Ike
+%\begin{frame}
+%	\frametitle{A lemma}
+%
+%	\emph{Lemma.} For every $a_i \in A'$, there exist $j_1, j_2 \in \{1, 2, 3\}, j_1 \neq j_2$ such that
+%	\[
+%	a_i[j_1]w_{a_i}x_{a_i} \in M
+%	\text{ and }
+%	a_i[j_2]y_{a_i}z_{a_i} \in M.
+%	\]
+%
+%	\begin{proof}
+%	Unless $x_{a_i}$ is matched, $a_i[1]w_{a_i}x_{a_i}$ is destabilizing.
+%
+%	Similarly, unless $z_{a_i}$ is matched, $a_i[1]y_{a_i}z_{a_i}$ or $a_i[2]y_{a_i}z_{a_i}$ is destabilizing.
+%	\end{proof}
+%\end{frame}
 
-% BEGIN Peter
+%\begin{frame}
+%	\frametitle{Preferences}
+%
+%	\begin{tabular}{r | c c c}
+%		\vdots \\
+%		$a_i[1]$ &	\underline{$w_{a_i}x_{a_i}$} &	$y_{a_i}z_{a_i}$ &	$b_{j_1}d_{l_1}$ \\
+%		$a_i[2]$ &	$w_{a_i}x_{a_i}$ &	$y_{a_i}z_{a_i}$ &	$b_{j_2}d_{l_2}$ \\
+%		$a_i[3]$ &	$w_{a_i}x_{a_i}$ &	$y_{a_i}z_{a_i}$ &	$b_{j_3}d_{l_3}$ \\
+%		\vdots \\
+%		\hline
+%		\vdots \\
+%		$w_{a_i}$ &	\underline{$a_i[1]x_{a_i}$} &	$a_i[2]x_{a_i}$ &	$a_i[3]x_{a_i}$ \\
+%		$y_{a_i}$ &	$a_i[1]x_{a_i}$ &	$a_i[2]x_{a_i}$ &	$a_i[3]x_{a_i}$ \\
+%		\vdots \\
+%		\hline
+%		\vdots \\
+%		$x_{a_i}$ &	$a_i[3]w_{a_i}$ &	$a_i[2]w_{a_i}$ &	\underline{$a_i[1]w_{a_i}$} \\
+%		$z_{a_i}$ &	$a_i[3]y_{a_i}$ &	$a_i[2]y_{a_i}$ &	$a_i[1]y_{a_i}$ \\
+%		\vdots \\
+%	\end{tabular}
+%\end{frame}
 
-\subsection{3GSM is \NP-Complete}
+% Peter
+
+\subsection{3GSM is \NP-hard}
 
 \begin{frame}
   \frametitle{NP-Completeness of 3DSM}
@@ -247,36 +301,36 @@
   \textit{Proof.} We have shown that we have a solution to 3DM iff we have a solution to the corresponding instance to 3GSM. Furthermore, we can efficiently check that a marriage is stable, and so 3GSM $\in$ NP.
 \end{frame}
 
-% END Peter
-
-% BEGIN Simone
+% Simone
 
 \subsection{Extension to 3PSA}
 
 \begin{frame}
 	\frametitle{Extending 3GSM to 3PSA}
 	
-	3GSM wants to make $k$ disjoint triples from 3 disjoint sets of size $k$ --- 3PSA wants to make $k$ disjoint triples from 1 set of size $3k$\\
-	
+	3GSM: $k$ disjoint triples from 3 disjoint sets of size $k$ \\
+	3PSA: $k$ disjoint triples from 1 set of size $3k$\\
+	\newline
 	Given 3GSM setup and solution, construct a 3PSA setup and solution: \\
 		$S = A \cup B \cup D$\\
 		$\forall s \in S$ give the same preferences as in 3GSM.\\
 		
-		What's missing?\\
-			- Pairs where both elements in the same original set (i.e. $\{ a_1, a_2 \}$) \\
-			- Pairs not ranked in original 3GSM (we said incomplete was ok)\\
+	%	What's missing?\\
+	%		- Pairs where both elements in the same original set (i.e. $\{ a_1, a_2 \}$) \\
+	%		- Pairs not ranked in original 3GSM (we said incomplete was ok)\\
 \end{frame}
 
 \begin{frame}
-	\frametitle{3PSA is NP-Hard} %Np complete??
-		Matching we found in 3GSM is also a solution in this 3PSA (obviously); then, 3PSA also NP Hard\\
-		
-		Proof:\\
-			%is this still true with incomplete?
-			Any stable assignment in this instance involves only inherited items and is
+	\frametitle{3PSA is NP-Complete} 
+		Matching we found in 3GSM is also a solution in this constructed 3PSA \\
+		\newline
+		\emph{Claim.} 3PSA also NP-Complete\\
+		\emph{Proof.} Any stable assignment in this instance involves only inherited items and is
 	therefore also a marriage in 3GSM instance: \\
-			- Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items-- then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
-			- This would also be a destabilizing triple in 3GSM (only inherited items) so a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
+			- Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items;\\
+			then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
+			- This would also be a destabilizing triple in 3GSM (only inherited items);\\
+			so, a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
 	
 \end{frame}
 
@@ -286,7 +340,7 @@
 
 	\frametitle{Conclusions}
 	
-	\includegraphics[width=\textwidth]{us}
+	Do I need this slide?
 	
 \end{frame}
 
@@ -294,16 +348,20 @@
 
 	\frametitle{Open Questions}
 		
-	Consistency: Within these proofs, preferences are allowed to be ``inconsistent," meaning that for some $a \in A$, they may not consistently rank pairs with $\beta_1$ over pairs with $\beta_2$--the ordering may completely depend on the other element in the pair. \\
+	\emph{Consistency.} Within these proofs, preferences are allowed to be ``inconsistent:" for some $a \in A$, they may not consistently rank pairs with $\beta_1$ over pairs with $\beta_2$--the ordering may completely depend on the other element in the pair. \\
 	
-		Does this ``make sense"/seem reasonable?\\ 
-			- Jazz Trios? -- sure, maybe\\
-			- Foods? -- definitely ( chocolate \& peanut butter: good, chocolate \& refried beans: bad)\\
-			- Groups for class? -- Not as much (want to work with your best friend \& anyone else more than any two acquaintances)\\
-			
+		\begin{itemize}Does this ``make sense"/seem reasonable?\\ 
+			\item Jazz Trios? -- sure, maybe\\
+			\item Foods? -- definitely (chocolate \& peanut butter: good, chocolate \& refried beans: bad)\\
+			\item Groups for class? -- Not as much (want to work with your best friend \& anyone else more than any two acquaintances)\\
+		\end{itemize}
+	\newline
 	Is this problem still NP-Hard if we assert consistency?
-	
-	Cyclic Matching: Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  
+	\newline
+\end{frame}
+\begin{frame}
+	\frametitle{Open Questions}
+	\emph{Consistency.} Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  \\
 	Destabilizing triple is then: $abd \notin M$ where $a b_1 d_1, a_2 b d_2, a_3 b_3 d \in M$ and $b \geq_a b_1, d \geq_b d_2, a \geq_d a_3$.\\
 	
 	Are there situations where this makes more sense?\\ % THINK OF SOME
@@ -315,6 +373,5 @@
 	\honor
 \end{frame}
 
-% END Simone
 
 \end{document}
