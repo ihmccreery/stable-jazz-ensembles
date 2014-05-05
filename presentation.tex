@@ -23,15 +23,16 @@
 \begin{frame}
 	\frametitle{3GSM: 3-gender stable marriage problem}
 
-	$n$ alto sax players, $n$ bassists, $n$ drummers, each ranks $n(n-1)$ possible pairs to make an ensemble of one
-	alto player, one bassist, and one drummer.
+	$n$ alto sax players, $n$ bassists, $n$ drummers, each ranks some of the $n(n-1)$ possible pairs to make an
+	ensemble of one alto player, one bassist, and one drummer.
+	May rank some and keep the rest as unacceptable.
 	Stability is reached when
 	\[
 	\not\exists \: a \in A, b \in B, d \in D
 	\]
 	such that
 	\[
-	(b,d) >_a \mu(a) \text{ and } (a,d) >_b \mu(b) \text{ and } (a,b) >_d \mu(d)
+	(b,d) >_a \mu(a) \text{ and } (a,d) >_b \mu(b) \text{ and } (a,b) >_d \mu(d).
 	\]
 	Can we guarantee a solution, and can we find an algorithm to compute a stable marriage?
 \end{frame}
@@ -39,15 +40,17 @@
 \begin{frame}
 	\frametitle{3PSA: 3-person stable assignment problem}
 
-	$3n$ people, each ranks $\frac{1}{2}(3n-1)(3n-2)$ possible pairs of other students.
+	$3n$ people, each ranks some of the $\frac{1}{2}(3n-1)(3n-2)$ possible pairs of other students.
+	May rank some and keep the rest as unacceptable.
 	Stability is reached if
 	\[
 	\not\exists \: p, q, r \in P
 	\]
 	such that
 	\[
-	(q,r) >_p \mu(p) \text{ and } (p,r) >_q \mu(q) \text{ and } (p,q) >_r \mu(r)
+	(q,r) >_p \mu(p) \text{ and } (p,r) >_q \mu(q) \text{ and } (p,q) >_r \mu(r).
 	\]
+
 	We probably can't guarantee a solution, but can we find an algorithm to decide?
 \end{frame}
 
