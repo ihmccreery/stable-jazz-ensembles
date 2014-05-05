@@ -239,29 +239,31 @@
 
 \begin{frame}
 	\frametitle{Extending 3GSM to 3PSA}
-	
-	3GSM wants to make $k$ disjoint triples from 3 disjoint sets of size $k$ --- 3PSA wants to make $k$ disjoint triples from 1 set of size $3k$\\
-	
+
+	3GSM: $k$ disjoint triples from 3 disjoint sets of size $k$ \\
+	3PSA: $k$ disjoint triples from 1 set of size $3k$\\
+	\newline
 	Given 3GSM setup and solution, construct a 3PSA setup and solution: \\
 		$S = A \cup B \cup D$\\
 		$\forall s \in S$ give the same preferences as in 3GSM.\\
-		
-		What's missing?\\
-			- Pairs where both elements in the same original set (i.e. $\{ a_1, a_2 \}$) \\
-			- Pairs not ranked in original 3GSM (we said incomplete was ok)\\
+
+	%	What's missing?\\
+	%		- Pairs where both elements in the same original set (i.e. $\{ a_1, a_2 \}$) \\
+	%		- Pairs not ranked in original 3GSM (we said incomplete was ok)\\
 \end{frame}
 
 \begin{frame}
-	\frametitle{3PSA is NP-Hard} %Np complete??
-		Matching we found in 3GSM is also a solution in this 3PSA (obviously); then, 3PSA also NP Hard\\
-		
-		Proof:\\
-			%is this still true with incomplete?
-			Any stable assignment in this instance involves only inherited items and is
+	\frametitle{3PSA is NP-Complete} 
+		Matching we found in 3GSM is also a solution in this constructed 3PSA \\
+		\newline
+		\emph{Claim.} 3PSA also NP-Complete\\
+		\emph{Proof.} Any stable assignment in this instance involves only inherited items and is
 	therefore also a marriage in 3GSM instance: \\
-			- Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items-- then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
-			- This would also be a destabilizing triple in 3GSM (only inherited items) so a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
-	
+			- Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items;\\
+			then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
+			- This would also be a destabilizing triple in 3GSM (only inherited items);\\
+			so, a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
+
 \end{frame}
 
 \section{Wrap up}
@@ -277,23 +279,28 @@
 \begin{frame}
 
 	\frametitle{Open Questions}
-		
-	Consistency: Within these proofs, preferences are allowed to be ``inconsistent," meaning that for some $a \in A$, they may not consistently rank pairs with $\beta_1$ over pairs with $\beta_2$--the ordering may completely depend on the other element in the pair. \\
-	
-		Does this ``make sense"/seem reasonable?\\ 
-			- Jazz Trios? -- sure, maybe\\
-			- Foods? -- definitely ( chocolate \& peanut butter: good, chocolate \& refried beans: bad)\\
-			- Groups for class? -- Not as much (want to work with your best friend \& anyone else more than any two acquaintances)\\
-			
+
+	\emph{Consistency.} Within these proofs, preferences are allowed to be ``inconsistent:" for some $a \in A$, they may not consistently rank pairs with $\beta_1$ over pairs with $\beta_2$--the ordering may completely depend on the other element in the pair. \\
+
+		\begin{itemize}Does this ``make sense"/seem reasonable?\\ 
+			\item Jazz Trios? -- sure, maybe\\
+			\item Foods? -- definitely (chocolate \& peanut butter: good, chocolate \& refried beans: bad)\\
+			\item Groups for class? -- Not as much (want to work with your best friend \& anyone else more than any two acquaintances)\\
+		\end{itemize}
+	\newline
 	Is this problem still NP-Hard if we assert consistency?
-	
-	Cyclic Matching: Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  
+	\newline
+\end{frame}
+\begin{frame}
+	\frametitle{Open Questions}
+	\emph{Consistency.} Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  \\
 	Destabilizing triple is then: $abd \notin M$ where $a b_1 d_1, a_2 b d_2, a_3 b_3 d \in M$ and $b \geq_a b_1, d \geq_b d_2, a \geq_d a_3$.\\
-	
+
 	Are there situations where this makes more sense?\\ % THINK OF SOME
 	Is this problem easier?
-	 
+
 \end{frame}
+
 
 \begin{frame}
 	\honor
