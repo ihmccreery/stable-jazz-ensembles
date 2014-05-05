@@ -258,11 +258,12 @@
 		\newline
 		\emph{Claim.} 3PSA also NP-Complete\\
 		\emph{Proof.} Any stable assignment in this instance involves only inherited items and is
-	therefore also a marriage in 3GSM instance: \\
-			- Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items;\\
-			then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
-			- This would also be a destabilizing triple in 3GSM (only inherited items);\\
-			so, a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
+		therefore also a marriage in 3GSM instance: \\
+		Suppose there were elements $a_i \in A, b_j \in B, d_l \in D$ not matched to inherited items;\\
+		then $a_i b_j d_l$ would be a destabilizing triple\\ %because it is ranked ahead of whatever other matching? still true with incomplete?
+		
+		This would also be a destabilizing triple in 3GSM (only inherited items);\\
+		so, a solution in this 3PSA instance is also a solution in the 3GSM instance. \\
 
 \end{frame}
 
@@ -290,20 +291,33 @@
 	\newline
 	Is this problem still NP-Hard if we assert consistency?
 	\newline
+	Huang proved that it is (2007)
 \end{frame}
 \begin{frame}
 	\frametitle{Open Questions}
-	\emph{Consistency.} Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  \\
+	\emph{Cyclic Matching.} Rather than ranking pairs, have $A$ rank $B$, $B$ rank $C$, $C$ rank $A$.  \\
 	Destabilizing triple is then: $abd \notin M$ where $a b_1 d_1, a_2 b d_2, a_3 b_3 d \in M$ and $b \geq_a b_1, d \geq_b d_2, a \geq_d a_3$.\\
 
 	Are there situations where this makes more sense?\\ % THINK OF SOME
-	Is this problem easier?
+	Is this problem easier?\\
+	
+	When k=3, k=4, stable marriage always exists (Boros et al. in 2004, Eriksson et al. in 2006)\\
+	
+	NP-Complete with incomplete preferences\\
 
 \end{frame}
 
 
 \begin{frame}
 	\honor
+	
+	Sources:
+	
+	Biró, Péter, and Eric Mcdermid. "Three-Sided Stable Matchings with Cyclic Preferences." Algorithmica 58.1 (2010): 5-18. Web. 27 Apr. 2014. <http://www.dcs.gla.ac.uk/~pbiro/papers/BMcD08comsoc_final.pdf>.
+
+	Ng, Cheng, and Daniel S. Hirschberg. "Three-dimensional Stable Matching Problems." SIAM Journal on Discrete Mathematics 4.2 (1991): 245-52. Web. 27 Apr. 2014. <https://www.ics.uci.edu/~dan/pubs/Stable3D.pdf>.
+
+	
 \end{frame}
 
 % END Simone
