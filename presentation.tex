@@ -16,34 +16,9 @@
 	\tableofcontents
 \end{frame}
 
-% Ike
+% BEGIN Ike
 
 \section{3GSM \& 3PSA}
-
-\begin{frame}
-	\frametitle{2GSM: 2-gender stable marriage problem}
-
-	$n$ men, $n$ women, each ranks $n$ of the opposite gender.
-	Stability is reached when
-	\[
-	\not\exists \: m \in M, w \in W \mid w >_m \mu(m) \text{ and } m >_w \mu(w).
-	\]
-	Guaranteed solution;
-	Gale-Shapley algorithm is efficient, $O(n^2)$.
-\end{frame}
-
-\begin{frame}
-	\frametitle{2PSA: 2-person stable assignment problem}
-
-	$2n$ people, each ranks $2n-1$ others.
-	Stability is reached if
-	\[
-	\not\exists \: p, q \in P \mid q >_p \mu(p) \text{ and } p >_q \mu(q).
-	\]
-	No guaranteed solution;
-	% TODO CITE
-	Irving algorithm is efficient, $O(n^2)$
-\end{frame}
 
 \begin{frame}
 	\frametitle{3GSM: 3-gender stable marriage problem}
@@ -92,7 +67,9 @@
 	\includegraphics[width=\textwidth]{mwsb-jazz}
 \end{frame}
 
-% Peter
+% END Ike
+
+% BEGIN Peter
 
 \begin{frame}
   \frametitle{Existence of Stable Matchings}
@@ -158,7 +135,9 @@
   \end{itemize}
 \end{frame}
 
-% Ike
+% END Peter
+
+% BEGIN Ike
 
 \section{3GSM is \NP-hard}
 
@@ -227,46 +206,9 @@
 	\qed
 \end{frame}
 
-%\begin{frame}
-%	\frametitle{A lemma}
-%
-%	\emph{Lemma.} For every $a_i \in A'$, there exist $j_1, j_2 \in \{1, 2, 3\}, j_1 \neq j_2$ such that
-%	\[
-%	a_i[j_1]w_{a_i}x_{a_i} \in M
-%	\text{ and }
-%	a_i[j_2]y_{a_i}z_{a_i} \in M.
-%	\]
-%
-%	\begin{proof}
-%	Unless $x_{a_i}$ is matched, $a_i[1]w_{a_i}x_{a_i}$ is destabilizing.
-%
-%	Similarly, unless $z_{a_i}$ is matched, $a_i[1]y_{a_i}z_{a_i}$ or $a_i[2]y_{a_i}z_{a_i}$ is destabilizing.
-%	\end{proof}
-%\end{frame}
+% END Ike
 
-%\begin{frame}
-%	\frametitle{Preferences}
-%
-%	\begin{tabular}{r | c c c}
-%		\vdots \\
-%		$a_i[1]$ &	\underline{$w_{a_i}x_{a_i}$} &	$y_{a_i}z_{a_i}$ &	$b_{j_1}d_{l_1}$ \\
-%		$a_i[2]$ &	$w_{a_i}x_{a_i}$ &	$y_{a_i}z_{a_i}$ &	$b_{j_2}d_{l_2}$ \\
-%		$a_i[3]$ &	$w_{a_i}x_{a_i}$ &	$y_{a_i}z_{a_i}$ &	$b_{j_3}d_{l_3}$ \\
-%		\vdots \\
-%		\hline
-%		\vdots \\
-%		$w_{a_i}$ &	\underline{$a_i[1]x_{a_i}$} &	$a_i[2]x_{a_i}$ &	$a_i[3]x_{a_i}$ \\
-%		$y_{a_i}$ &	$a_i[1]x_{a_i}$ &	$a_i[2]x_{a_i}$ &	$a_i[3]x_{a_i}$ \\
-%		\vdots \\
-%		\hline
-%		\vdots \\
-%		$x_{a_i}$ &	$a_i[3]w_{a_i}$ &	$a_i[2]w_{a_i}$ &	\underline{$a_i[1]w_{a_i}$} \\
-%		$z_{a_i}$ &	$a_i[3]y_{a_i}$ &	$a_i[2]y_{a_i}$ &	$a_i[1]y_{a_i}$ \\
-%		\vdots \\
-%	\end{tabular}
-%\end{frame}
-
-% Peter
+% BEGIN Peter
 
 \subsection{3GSM is \NP-hard}
 
@@ -301,7 +243,9 @@
   \textit{Proof.} We have shown that we have a solution to 3DM iff we have a solution to the corresponding instance to 3GSM. Furthermore, we can efficiently check that a marriage is stable, and so 3GSM $\in$ NP.
 \end{frame}
 
-% Simone
+% END Peter
+
+% BEGIN Simone
 
 \subsection{Extension to 3PSA}
 
@@ -367,5 +311,6 @@
 	\honor
 \end{frame}
 
+% END Simone
 
 \end{document}
