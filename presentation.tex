@@ -204,10 +204,10 @@
 \subsection{3GSM is \NP-Complete}
 
 \begin{frame}
-  \frametitle{NP-Completeness of 3DSM}
+  \frametitle{NP-Completeness of 3GSM}
   \textbf{Theorem 1.} If $T'$ contains a matching $M'$, the 3GSM instance has a stable marriage $M$.
 
-  \textit{Proof.} For each $a_i \in A'$, one of $a_ib_{j_1}d_{l_1}, a_ib_{j_2}d_{l_2}, a_ib_{j_2}d_{l_2}$ are in $M'$. We add to $M$
+  \textit{Proof.} For each $a_i \in A'$, one of $a_ib_{j_1}d_{l_1}, a_ib_{j_2}d_{l_2}, a_ib_{j_3}d_{l_3}$ are in $M'$. We add to $M$
   \begin{align*}
     \begin{cases}
       a_i[1]b_{j_1}d_{l_1}, a_i[2]w_{a_i}x_{a_i}, a_i[3]y_{a_i}z_{a_i} & \text{if } a_ib{j_1}d_{l_1} \in M' \\
@@ -219,7 +219,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{NP-Completeness of 3DSM}
+  \frametitle{NP-Completeness of 3GSM}
   \textbf{Theorem 2.} If our 3GSM instance has a stable marriage $M$, $T'$ contains a complete matching.
 
   \textit{Proof.} By our lemma, for each $a_i$, two of its clones are matched with $w_{a_i}x_{a_i}$ and $y_{a_i}z_{a_i}$. Call $M'$ the remaining elements. $M'$ is a matching, since it is a subset of the marriage $M$.
@@ -228,7 +228,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{NP-Completeness of 3DSM}
+  \frametitle{NP-Completeness of 3GSM}
   \textbf{Theorem 3.} 3GSM is NP-complete.
 
   \textit{Proof.} We have shown that we have a solution to 3DM iff we have a solution to the corresponding instance to 3GSM. Furthermore, we can efficiently check that a marriage is stable, and so 3GSM $\in$ NP.
