@@ -97,9 +97,6 @@
 \begin{frame}
   \frametitle{Existence of Stable Matchings}
 
-  \begin{itemize}
-  \item In $2DSM$, we are guaranteed a matching
-  \item In $3DSM$, this is not the case:
     \begin{center}
       \begin{tabular}{c | c c c c}
         $\alpha_1$ & $\beta_1\delta_2$ $\beta_1\delta_1$ $\beta_2\delta_2$ $\beta_2\delta_1$ \\
@@ -109,24 +106,14 @@
         $\delta_1$ & $\alpha_1\beta_2$ $\alpha_1\beta_1$ $\alpha_2\beta_1$ $\alpha_2\beta_2$ \\
         $\delta_2$ & $\alpha_1\beta_1$ $\alpha_2\beta_2$ $\alpha_1\beta_2$ $\alpha_2\beta_1$ \\
       \end{tabular}
-    \end{center}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Existence of Stable Matchings}
-  \begin{itemize}
-  \item Possible matchings are:
-    \begin{center}
       \begin{tabular}{c | c}
         Marriage & Destabilized by \\ \hline
-        $\{\alpha_1, \beta_1, \delta_1\}, \{\alpha_2, \beta_2, \delta_2\}$ & $\alpha_1\beta_1\delta_1$ \\
-        $\{\alpha_1, \beta_1, \delta_2\}, \{\alpha_2, \beta_2, \delta_1\}$ & $\alpha_1\beta_1\delta_1$ \\
-        $\{\alpha_1, \beta_2, \delta_1\}, \{\alpha_2, \beta_1, \delta_2\}$ & $\alpha_1\beta_1\delta_1$ \\
-        $\{\alpha_1, \beta_2, \delta_2\}, \{\alpha_2, \beta_1, \delta_1\}$ & $\alpha_1\beta_1\delta_1$ \\
+        $\{\alpha_1, \beta_1, \delta_1\}, \{\alpha_2, \beta_2, \delta_2\}$ & $\alpha_1\beta_1\delta_2$ \\
+        $\{\alpha_1, \beta_1, \delta_2\}, \{\alpha_2, \beta_2, \delta_1\}$ & $\alpha_2\beta_1\delta_1$ \\
+        $\{\alpha_1, \beta_2, \delta_1\}, \{\alpha_2, \beta_1, \delta_2\}$ & $\alpha_1\beta_1\delta_2$ \\
+        $\{\alpha_1, \beta_2, \delta_2\}, \{\alpha_2, \beta_1, \delta_1\}$ & $\alpha_2\beta_2\delta_2$ \\
       \end{tabular}
     \end{center}
-  \end{itemize}
 \end{frame}
 
 \section{\NP-hardness}
