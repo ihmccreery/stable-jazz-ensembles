@@ -1,0 +1,85 @@
+% Another example tex file
+% Oberlin College
+% Isaac Hollander McCreery
+
+% document information
+\title[$n$-D Stable Matching]{Stable Jazz Ensembles: $n$-D Matching Problems}
+\author[Brodner, Fogg, McCreery]{Simone Brodner \and Peter Fogg \and Isaac Hollander McCreery}
+\date{May 5, 2014}
+
+% packages
+\usepackage[parfill]{parskip} % begin paragraphs with an empty line rather than an indent
+%\usepackage{fullpage} % use more of the page
+\usepackage{amsmath,amssymb,amsthm} % math stuff
+\usepackage{paralist}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{moreenum}
+\usepackage{graphicx}
+\usepackage{ulem}
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\AtBeginSubsection[]
+{
+	\begin{frame}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+%% formatting pages, etc.
+%\renewcommand{\baselinestretch}{1.1}
+%\setlength{\headheight}{15.2pt}
+%\setlength{\headsep}{15pt}
+%\setlength{\textheight}{592pt}
+%\setlength{\footskip}{30pt}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+
+%% format the header
+%\fancyhf{}
+%\lhead{\student}
+%\rhead{\today}
+%\cfoot{\thepage}
+%\pagestyle{fancy}
+%
+%% format the title
+%\renewcommand\maketitle{
+%\begin{center}
+%	\textsc{\Large \name: Homework \#\hwk} \\ [12pt]
+%	\textsc{\student}
+%\end{center}
+%}
+
+%% list formatting
+%\renewcommand{\theenumi}{\arabic{enumi}.}
+%\renewcommand{\labelenumi}{\theenumi}
+%\renewcommand{\theenumiii}{\roman{enumiii}.}
+%\renewcommand{\labelenumiii}{\theenumiii}
+%\renewcommand{\theenumiv}{\greek{enumiv})}
+%\renewcommand{\labelenumiv}{\theenumiv}
+%
+%%%
+%% The following are definitions so that you can use numbered lemmas, claims, etc.
+%%%
+%\newtheorem{lemma}{Lemma}
+%\newtheorem*{lem}{Lemma}
+%\newtheorem{definition}{Definition}
+%\newtheorem{notation}{Notation}
+%\newtheorem*{claim}{Claim}
+%\newtheorem*{fclaim}{False Claim}
+%\newtheorem{observation}{Observation}
+%\newtheorem{conjecture}[lemma]{Conjecture}
+%\newtheorem{theorem}[lemma]{Theorem}
+%\newtheorem{corollary}[lemma]{Corollary}
+%\newtheorem{proposition}[lemma]{Proposition}
+%\newtheorem*{rt}{Running Time}
+
+\newcommand{\upth}{^{\text{th}}}
+\newcommand{\eval}{\Big|}
+\newcommand{\NP}{NP}
